@@ -9,7 +9,7 @@ namespace ConectarBanco
         public static MySqlConnection connection;
         private MySqlDataAdapter mAdapter;
         public static DataSet mDataSet;
-        private string tabelaBD = "falas";
+        private string tabelaBD = "tabela";
 
         public Connection(String server, String dataBase, String user, bool conectar)
         {
@@ -41,11 +41,11 @@ namespace ConectarBanco
             }
         }
 
-        public void InserirDado(String dado)
+        public void InserirDado(String dado1, String dado2, String dado3, String dado4)
         {
             try
             {
-                MySqlCommand command = new MySqlCommand("INSERT INTO falas(categoria, fala, resposta, comando) VALUES('" + dado + "','" + dado + "','" + dado + "','" + dado + "')", connection);
+                MySqlCommand command = new MySqlCommand("INSERT INTO tabela(coluna1, coluna2, coluna3, coluna4) VALUES('" + dado1 + "','" + dado2 + "','" + dado3 + "','" + dado4 + "')", connection);
 
                 // executa o comando
                 command.ExecuteNonQuery();
