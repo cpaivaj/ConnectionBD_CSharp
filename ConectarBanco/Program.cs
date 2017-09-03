@@ -12,6 +12,9 @@ namespace ConectarBanco
             // imprime o conteudo da tabela escolhida
             con.ImprimeConteudo();
 
+            // insere dados no banco
+            //con.InserirDado("Exemplo");
+
             Console.ReadLine();
         }
     }

@@ -41,9 +41,19 @@ namespace ConectarBanco
             }
         }
 
-        public void InserirDado()
+        public void InserirDado(String dado)
         {
+            try
+            {
+                MySqlCommand command = new MySqlCommand("INSERT INTO falas(categoria, fala, resposta, comando) VALUES('" + dado + "','" + dado + "','" + dado + "','" + dado + "')", connection);
 
+                // executa o comando
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
+                Console.WriteLine("Erro ao inserir registro");
+            }
         }
 
         public void RemoverDado()
